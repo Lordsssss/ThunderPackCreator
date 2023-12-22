@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mod Manifest Builder</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Product Sans">
+  </head>
+
+  <body>
+    <h1>Mod Manifest Builder</h1>
+    <div class="container">
+    <div class="form__group field">
+      <input
+        type="text"
+        id="modName"
+        class="form__field"
+        placeholder="Name"
+        required=""
+      />
+      <label for="name" class="form__label">Mod Name</label>
+    </div>
+
+    <div class="form__group field">
+      <input
+        type="text"
+        id="versionNumber"
+        class="form__field"
+        placeholder="Name"
+        required=""
+      />
+      <label for="versionNumber" class="form__label">Version Number</label>
+    </div>
+
+    <div class="form__group field">
+      <input
+        type="text"
+        id="websiteURL"
+        class="form__field"
+        placeholder="Name"
+        required=""
+      />
+      <label for="websiteURL" class="form__label">Website URL</label>
+    </div>
+
+    <div class="form__group field">
+      <input
+        type="text"
+        id="description"
+        class="form__field"
+        placeholder="Name"
+        required=""
+      />
+      <label for="description" class="form__label">Description</label>
+    </div>
+
+    <div class="form__group field">
+      <input
+        type="text"
+        id="dependencyInput"
+        class="form__field"
+        placeholder="Name"
+        required=""
+      />
+      <label for="dependencies" class="form__label">Dependencies</label>
+    </div>
+    <div id="dependencyList" class="form__label_button"></div>
+
+    <button onclick="addDependency()">
+      <span class="transition"></span>
+      <span class="gradient"></span>
+      <span class="label">Add Dependency</span>
+    </button>
+
+    <!-- Add this input field for uploading an existing manifest.json -->
+    <div class="form__group_button">
+      <label for="manifestInput" class="form__label_button"
+        >Upload existing manifest.json:</label
+      >
+      <input
+        type="file"
+        id="manifestInput"
+        class="form__label_button"
+        accept=".json"
+      />
+    </div>
+
+    <div class="form__group_button">
+      <label for="imageInput" class="form__label_button"
+        >Choose an image (256x256):</label
+      >
+      <input
+        type="file"
+        id="imageInput"
+        class="form__label_button"
+        accept="image/*"
+      />
+    </div>
+
+    <div id="imagePreview">
+      <img id="previewImage" alt="Image Preview" width="100" />
+    </div>
+
+    <div class="form__group_button">
+      <label for="readmeContent" class="form__label_button"
+        >Readme Content:</label
+      >
+      <textarea id="readmeContent" rows="4"></textarea>
+    </div>
+
+    <button onclick="createManifest()">
+      <span class="transition"></span>
+      <span class="gradient"></span>
+      <span class="label">Create Manifest </span>
+    </button>
+    <label class="form__label_button" for=""
+      >You can upload your modpack on
+      <a href="https://h3vr.thunderstore.io/package/create/"
+        >this page</a
+      ></label
+    >
+    <!-- Add this link in the body section -->
+    <a id="downloadLink" style="display: none">Download Zip</a>
+
+    <script type="text/javascript" src="../eel.js"></script>
+    <script src="./script.js"></script>
+</div>
+  </body>
+</html>
